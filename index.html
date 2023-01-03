@@ -162,43 +162,49 @@
                 <br>q.pop(); q.push(5); q.push(7); q.pop(); q.push(8); q.size(); } }
     </p>
     <br><br><br><br><br><br><br><br><br>
-    <p>import java.util.*;
+  
+    <br>package com.mycompany.binary;
 
-      <br>public class Binary_Search {
+    <br>import java.util.Scanner;
+    <br>public class binary {
+    
+    
+      <br>void bs (int []a, int low, int high, int f){
+        <br>if(low<
+        <br>  =high){<br>
+          <br>int mid = (low+high)/2;
+          <br>if (a[mid] == f){
+        
+            <br> System.out.println("your element is found and its index is "+ mid);}
+            <br>else if(a[mid]>f){
+              <br> bs(a, low, mid-1,f);}
+              <br>else{
+                <br>bs(a, mid+1,high,f);}
+                <br> }}
 
-        <br>public static Scanner sc = new Scanner(System.in);
-        <br>public static int A[]= new int[10];
-        <br>public static int L=0,U=9,M,f=0;
-        <br>public static void main(String[]args) {
+                <br>public static void main(String[] args) {
+                  <br>binary b = new binary();
+                  <br>Scanner sc = new Scanner(System.in);
+                  <br>int f;
+                  <br>int [] x = {5,4,3,2,1};
+                  <br>System.out.println("enter the element you wish to find");
+                  <br>f = sc.nextInt();
+                  <br>int temp;
+                  <br>for(int i = 0;i<x.length;i++)<br>
+                  {
+                    <br>for(int j = i+1;j<x.length;j++)<br>
+                    {
+         
+                      <br>if (x[i]>x[j]){
+                        <br>temp = x[j];
+                        <br>x[j] = x[i];
+                        <br> x[i] = temp;}
+                        <br> } }
+                        <br>for(int i = 0;i<x.length;i++)<br>
+                        {
+                          <br> System.out.println(x[i]);}
+                          <br> b.bs(x,0,x.length-1,f );}}
 
-          <br>System.out.println("\nEnter 10 elements of an array in ascending order : \n");
-          <br>for(int i=0;i<10;i++){<br>
-            <br>A[i]=sc.nextInt();
-            <br>}
-            <br>System.out.println("\nEnter number to be searched in array : ");
-            <br>int num = sc.nextInt();
-            <br>while(L<<br>
-              <br>=U){
-              <br>  M=(L+U)/2;
-              <br> if(num>A[M]){
-                <br>    L=M+1;
-                <br> }
-                 else if(num<<br>
-                  <br>A[M]){
-                 <br>  U=M-1;
-                  <br> }
-                  <br> else{
-                    <br> f=1;
-                    <br> break;
-                    <br> }
-                    <br>}
-                    <br> if(f==0){
-                      <br>  System.out.println(num+" is not present in array");
-                      <br> }
-                      <br> else {
-                        <br> System.out.println(num + " is present in array at location " + (M + 1));
-                        <br>}
-}}<br>
 </p>
   </body>
 </html>
