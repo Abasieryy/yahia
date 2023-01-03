@@ -6,11 +6,11 @@
     <link href="style.css" rel="stylesheet" />
   </head>
 
-  <body>
+  <br>
     <div class="container">
-      <header class="main-header">
+      <header class="main-header clearfix">
+        <h1>📘 The Code Magazine</h1>
         <nav>
-          <h1>📘 The Code Magazine</h1>
           <a href="blog.html">Blog</a>
           <a href="#l">Challenges</a>
           <a href="#">Flexbox</a>
@@ -26,17 +26,19 @@
             alt="laura-jones image"
             width="50"
             height="50"
+            class="author-img"
           />
-
-          <p id="author">
+          <!--  -->
+          <p id="author" class="author">
             Posted by<strong> Laura Jones</strong> on Monday, June 21st 2027
           </p>
+
           <img
             src="img/post-img.jpg"
             alt="html coding picture"
             width="500"
             height="200"
-            class="post-img"
+            class="programming-img"
           />
         </header>
         <p>
@@ -147,5 +149,55 @@
       </footer>
     </div>
     <button>❤like</button>
+    <p>
+      package com.mycompany.q; public class Q { static class Node { int data;
+        <br>Node next; public Node(){ next = null; } } int size; Node front,rear;
+        <br>public Q(){ size = 0; front = rear = null; } void push(int x){ size++;
+          <br>Node n = new Node(); n.data = x; if (rear == null){ front = rear = n;
+            <br>return; } rear.next = n; rear = n; } void pop(){ size--; Node t = front;
+              <br>if(front == null){ return; } front = front.next;
+              <br> System.out.println(t.data); if(front == null){ rear = null; } } void
+              <br>size(){ System.out.println(size); } public static void main(String[] args)
+              <br>{ Q q = new Q(); q.push(5); q.pop(); q.push(9); q.push(2); q.push(3);
+                <br>q.pop(); q.push(5); q.push(7); q.pop(); q.push(8); q.size(); } }
+    </p>
+    <br><br><br><br><br><br><br><br><br>
+    <p>import java.util.*;
+
+      <br>public class Binary_Search {
+
+        <br>public static Scanner sc = new Scanner(System.in);
+        <br>public static int A[]= new int[10];
+        <br>public static int L=0,U=9,M,f=0;
+        <br>public static void main(String[]args) {
+
+          <br>"System.out.println("\nEnter 10 elements of an array in ascending order : \n");"
+          <br>for(int i=0;i<10;i++){
+            <br>A[i]=sc.nextInt();
+            <br>}
+            <br>System.out.println("\nEnter number to be searched in array : ");
+            <br>int num = sc.nextInt();
+            <br>while(L<=U){
+              <br>  M=(L+U)/2;
+              <br> if(num>A[M]){
+                <br>    L=M+1;
+                <br> }
+                <br> else if(num<A[M]){
+                  <br>  U=M-1;
+                  <br> }
+                  <br> else{
+                    <br> f=1;
+                    <br> break;
+                    <br> }
+                    <br>}
+                    <br> if(f==0){
+                      <br>  System.out.println(num+" is not present in array");
+                      <br> }
+                      <br> else {
+                        <br> System.out.println(num + " is present in array at location " + (M + 1))
+                        <br><br }
+}
+}
+</p>
   </body>
 </html>
