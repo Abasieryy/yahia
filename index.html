@@ -206,5 +206,74 @@
                           <br> b.bs(x,0,x.length-1,f );}}
 
 </p>
+<br><br><br><br><br><br><br><br><br>
+
+<br>class MergeSort {
+  
+  <br>void merge(int arr[], int l, int m, int r)
+  <br>{
+      
+    <br>int n1 = m - l + 1;
+    <br>int n2 = r - m;
+
+     
+    <br> int L[] = new int[n1];
+    <br> int R[] = new int[n2];
+
+ 
+    <br>  for (int i = 0; i < n1; ++i)
+    <br>    L[i] = arr[l + i];
+    <br> for (int j = 0; j < n2; ++j)
+    <br>   R[j] = arr[m + 1 + j];
+
+     
+
+     
+    <br>  int i = 0, j = 0;
+
+      
+    <br> int k = l;
+    <br> while (i < n1 && j < n2) {
+      <br>   if (L[i] <= R[j]) {
+        <br>     arr[k] = L[i];
+        <br>    i++;
+        <br>  }
+        <br>  else {
+          <br>   arr[k] = R[j];
+          <br>    j++;
+          <br>  }
+          <br>  k++;}
+          <br>while (i < n1) {
+            <br> arr[k] = L[i];
+            <br>i++;
+            <br> k++;}
+            <br>  while (j < n2) {
+              <br>  arr[k] = R[j];
+              <br>  j++;
+              <br>  k++;
+              <br> }}
+
+              <br>void sort(int arr[], int l, int r){
+                <br> if (l < r) {
+                  <br>int m = l + (r - l) / 2;
+                  <br>sort(arr, l, m);
+                  <br> sort(arr, m + 1, r);
+                  <br> merge(arr, l, m, r);
+                  <br> } }
+                  <br> static void printArray(int arr[]) {
+                    <br>int n = arr.length;
+                    <br> for (int i = 0; i < n; ++i)
+                    <br>  System.out.print(arr[i] + " ");
+                    <br> System.out.println();}
+                    <br>public static void main(String args[]){
+                      <br>    int arr[] = { 12, 11, 13, 5, 6, 7 };
+                      <br> System.out.println("Given Array");
+                      <br>  printArray(arr);
+                      <br>MergeSort ob = new MergeSort();
+                      <br> ob.sort(arr, 0, arr.length - 1);
+                      <br> System.out.println("\nSorted array");
+                      <br> printArray(arr);
+                      <br>}}
+
   </body>
 </html>
